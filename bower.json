@@ -1,0 +1,6 @@
+{
+  "name": "oncall-management-frontend",
+  "dependencies": {
+    "materialize": "0.97.6"
+  }
+}

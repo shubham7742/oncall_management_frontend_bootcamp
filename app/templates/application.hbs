@@ -1,5 +1,25 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="row">
+{{#md-navbar name='Oncall Management System' class='indigo'}}
+  <!-- A workaround to get the "active" class
+    to apply to the active <li> automatically -->
+{{!--   {{#link-to 'navbar' tagName='li'}}
+    {{link-to 'Navbar' 'navbar'}}
+  {{/link-to}}
+  {{#link-to 'tabs' tagName='li'}}
+    {{link-to 'Tabs' 'tabs'}}
+  {{/link-to}} --}}
+{{/md-navbar}}
+</div>
+<div class="container">
+	<div class="col s12" id="button-bar">
+		{{#link-to 'create-employee'}}
+			{{md-btn text='Create Employee' class='deep-orange darken-2 white-text'}}
+		{{/link-to}}
+		{{#link-to 'create-team'}}
+			{{md-btn text='Create Team' class='deep-orange darken-2 white-text'}}
+		{{/link-to}}
+	</div>
+	<div class="col s12" id="main-container">
+		{{outlet}}
+	</div>
+</div>

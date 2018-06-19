@@ -1,0 +1,11 @@
+<div class="col s12">
+    {{md-input label='Team Name' class="col s12" validate=true}}
+    {{md-input label='Team Email' type="email" class="col s12" validate=true}}
+    {{md-input label='Escalation Time' type="number" class="col s12" validate=true}}
+    {{md-input-date label='Oncall Start Date' class="col s12"}}
+    {{md-btn text='Submit'
+        action='createTeamSubmit'
+        buttonType='large'
+        class='deep-orange darken-2 white-text'}}
+</div>
+{{yield}}
