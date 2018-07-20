@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col s12">
+        <div class="col s12"><h5>{{fa-icon "star"}} TEAMS</h5></div>
+        <head>
+            <style>
+            table{border-collapse: collapse;}
+               th,td{
+             border: 1px solid;
+                     }
+            </style>
+        </head>
+        <table>
+            <th>teamId</th>
+            <th>Team_name</th>
+            <th>Team_Email</th>
+            <th>Oncall-Start-Date</th>
+            <th>Criticality</th>
+        	{{#each model.teamList as |t| }}
+        		<tr>
+                <td>{{t.id}}</td>
+        		<td>{{t.teamName}}</td>
+        		<td>{{t.teamEmail}}</td>
+        		<td>{{t.oncallStartDate}}</td>
+        		<td>{{t.criticality}}</td>
+                </tr>
+                {{/each}}
+            </table>
+</div>
+</div>
+
+{{outlet}}

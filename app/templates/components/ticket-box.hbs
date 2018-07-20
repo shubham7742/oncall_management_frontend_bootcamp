@@ -1,0 +1,21 @@
+<div class="col s12">
+	<form id="create-ticket-form">
+    {{md-input label='heading' value=ticket.heading class="col s12" validate=true}}
+    {{md-input label='description'  value=ticket.description class="col s12" validate=true}}
+    {{md-input label='teamId' type="number" value=ticket.teamId class="col s12" validate=true}}
+    {{md-input label='assignee' type="number" value=ticket.assignee class="col s12" validate=true}}
+    {{md-input label='severity' type="number" value=ticket.severity class="col s12" validate=true}}
+     {{md-input label='Esc Dur' type="string" value=ticket.escalationDurations class="col s12" validate=true}}
+   {{!--  {{md-btn text='Submit'
+        action='createTicketSubmit'
+        buttonType='large'
+        class='deep-orange darken-2 white-text'}} --}}
+       
+      <button class="confirm-submit" {{action "createTicketSubmit" ticket}}>CREATE</button><br>
+      {{#link-to "tickets"}}
+      <button> ALL TICKETS</button>
+      {{/link-to}}
+    
+    </form>
+</div>
+{{yield}}

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col s12">
+        <div class="col s12"><h5>{{fa-icon "star"}} TEAM TICKETS</h5></div>
+        <ul>
+        	{{#each model.teamTicketList as |t| }}
+        	<li>
+        		<h4>ticket_Id: {{t.id}}</h4><br>
+        		team:{{t.teamId}}
+        		Description : {{t.description}}<br>
+                Assignee: {{t.assignee}}<br>
+                </li>
+                {{/each}}
+            </ul>
+</div>
+</div>
+{{outlet}}

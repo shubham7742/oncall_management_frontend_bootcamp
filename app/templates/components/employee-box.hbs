@@ -1,21 +1,25 @@
+{{yield }}
 <div class="col s12">
-    <form id="create-employee-form" {{action 'createEmployeeSubmit' employee}} >
+     <form id="create-employee-form" >
         {{md-input label='Name' class="col s12" value=employee.name validate=true}}
         {{md-input label='Email' type="email" class="col s12" value=employee.email validate=true}}
+        {{md-input label='Phone no.' class="col s12" value=employee.phoneNo validate=true}}
         {{md-select label="Manager"
             class="col s12"
             prompt="Select Manager"
             value=employee.managerId
-            content=model.employeeList.content
+            content=model.employeeList
             optionLabelPath="content.name"
             optionValuePath="content.id"}}
-        {{md-btn text='Submit'
-            buttonType='large'
-            type='submit'
-            class='deep-orange darken-2 white-text'}}
-    </form>
+            {{md-input label='team_employee_relation((1,2),(2,3),(3,3))' class="col s12" value=teamEmployee validate=true}}
+    
+
+    
+
+            <button class="confirm-submit" {{action "createEmployeeSubmit" employee teamEmployee}}>Submit</button>
+        </form>
+    
 </div>
 {{!-- {{#each model.employeeList.content as |employee|}}
     <li>{{employee.name}}</li>
 {{/each}} --}}
-{{yield}}

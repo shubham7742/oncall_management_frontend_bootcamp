@@ -1,11 +1,22 @@
 <div class="col s12">
-    {{md-input label='Team Name' class="col s12" validate=true}}
-    {{md-input label='Team Email' type="email" class="col s12" validate=true}}
-    {{md-input label='Escalation Time' type="number" class="col s12" validate=true}}
-    {{md-input-date label='Oncall Start Date' class="col s12"}}
-    {{md-btn text='Submit'
-        action='createTeamSubmit'
-        buttonType='large'
-        class='deep-orange darken-2 white-text'}}
+	<form id="create-team-form"  >
+    {{md-input label='Team Name' value=team.teamName class="col s12" validate=true}}
+    {{md-input label='Team Email'  value=team.teamEmail class="col s12" validate=true}}
+    {{md-input-date label='Oncall Start Date' dateFormat='YYYY-MM-DD' value=team.oncallStartDate class="col s12" }}
+    {{md-input label='Criticality'  type="number" min=0 max=2 value=team.criticality class="col s12" validate=true}} 
+        {{!-- {{md-select label="Criticality"
+            class="col s12"
+            prompt="Select Criticality"
+            value=team.criticality
+            content=model.arrayCritical.content
+            optionLabelPath="content.value"
+            optionValuePath="content.level"
+            }}
+         --}}
+        <button class="confirm-submit" {{action "createTeamSubmit" team}}>Submit</button><br/>
+        {{#link-to "teams"}}
+        <button class="All Tickets">VIEW ALL TEAMS</button> 
+        {{/link-to}}
+    </form>
 </div>
 {{yield}}

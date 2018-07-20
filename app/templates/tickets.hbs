@@ -1,0 +1,48 @@
+{{!-- <ul>
+	{{#each model.ticketList as |t|}}
+	<li> ticketDets: {{t.description}}</li>
+	{{/each}}
+</ul> --}}
+<div class="row">
+    <div class="col s12">
+        <div class="col s12"><h5>{{fa-icon "star"}} TICKETS</h5></div>
+  <head>
+    <style>
+    table{border-collapse: collapse;}
+    th,td{
+      border: 1px solid;
+    }
+</style>
+  </head>
+<div class='cols s12'>
+	<table >
+    <tr>
+      <th>Ticket_id</th>
+      <th>Description</th>
+      <th>teamId</th>
+      <th>assignee</th>
+      <th>severity</th>
+      <th>Worklog</th>
+      <th>edit</th>
+    </tr>
+	 {{#each model.ticketList.content as |t|}}
+   <tr>
+	<td>{{t.id}}</td>
+	<td>{{t.description}}</td>
+	<td>{{t.teamId}}</td>
+	<td>{{t.assignee}}</td>
+  <td>{{t.severity.value}}</td>
+	<td>{{#link-to "show" t.id}}
+	 <button>GET WORKLOG</button>
+	 {{/link-to}}</td>
+   <td>{{#link-to "edit-ticket" t.id}}
+    <button>EDIT</button>
+  {{/link-to}}</td>
+   </tr>
+	{{/each}}
+</table>
+</div>
+</div>
+</div>
+
+{{outlet}}

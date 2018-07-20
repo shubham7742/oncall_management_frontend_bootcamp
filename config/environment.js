@@ -5,7 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'oncall-management-frontend',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
+    uuid: '',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,6 +17,9 @@ module.exports = function(environment) {
         Date: false
       }
     },
+
+    //baseUrl: 'http://172.17.32.218:8080',
+    baseUrl: 'http://localhost:8080',
 
     APP: {
       // Here you can pass flags/options to your application instance

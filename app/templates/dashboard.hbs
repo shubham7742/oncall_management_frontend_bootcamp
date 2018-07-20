@@ -1,0 +1,40 @@
+ <head>
+            <style>
+            table{border-collapse: collapse;}
+               th,td{
+             border: 1px solid;
+                     }
+            </style>
+ </head>
+<div class="row">
+    <div class="col s12">
+    	<right>
+        {{#link-to 'create-ticket'}}
+		{{md-btn text='CREATE-TICKET' class='deep orange darken-2 white text'}}
+		{{/link-to}}
+		</right>  
+		<table>  
+            <th>ticketId</th>
+            <th>title</th>
+            <th>Assignee</th>
+            <th>Team_name</th>
+            <th>Reporter</th>
+            <th>SHOW</th>
+        	{{#each model.ticketList as |t| }}
+        		<tr>
+                <td>{{t.id}}</td>
+                <td>{{t.heading}}</td>
+        		<td>{{t.assignee}}</td>
+        		<td>{{t.teamId}}</td>
+        		<td>{{t.reporter}}</td>
+        		<td>{{#link-to "show" t.id}}
+        		<button>Show</button>
+        		 {{/link-to}}</td>
+                </tr>
+                {{/each}}
+            </table>
+
+
+</div>
+</div>
+{{outlet}}

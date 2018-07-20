@@ -12,14 +12,26 @@
 </div>
 <div class="container">
 	<div class="col s12" id="button-bar">
-		{{#link-to 'create-employee'}}
-			{{md-btn text='Create Employee' class='deep-orange darken-2 white-text'}}
+		<h3><center>Select one option:</center></h3>
+		<center>
+		{{#link-to 'admin'}}
+			{{md-btn text='ADMIN' class='deep-orange darken-2 white-text'}}
 		{{/link-to}}
-		{{#link-to 'create-team'}}
-			{{md-btn text='Create Team' class='deep-orange darken-2 white-text'}}
+		{{#link-to 'login'}}
+			{{md-btn text='User-login' class='deep-orange darken-2 white-text'}}
 		{{/link-to}}
+	</center>
+		{{!-- {{#link-to 'create-ticket'}}
+			{{md-btn text='Create Ticket' class='deep-orange darken-2 white-text'}}
+		{{/link-to}}
+		{{#link-to 'create-log'}}
+			{{md-btn text='Create Log' class='deep-orange darken-2 white-text'}}
+		{{/link-to}} --}}
+
+
 	</div>
 	<div class="col s12" id="main-container">
-		{{outlet}}
+	
 	</div>
 </div>
+		{{outlet}}

@@ -1,0 +1,36 @@
+<div class="col s12">
+	<form id="create-log-form"  >
+    {{!-- {{md-input label='ticket_Id' type='number' value=log.ticketId class="col s12" validate=true}}
+    {{md-input label='Reporter'  type='number' value=log.empId class="col s12" validate=true}} --}}
+   
+        {{md-select label="Ticket"
+            class="col s12"
+            prompt="Select Ticket"
+            value=log.ticketId
+            content=model.ticketList
+            optionLabelPath="content.id"
+            optionValuePath="content.id"}}
+         {{md-select label="Reporter"
+            class="col s12"
+            prompt="choose here"
+            value=log.empId
+            content=model.empList
+            optionLabelPath="content.name"
+            optionValuePath="content.id"}}
+             {{md-input label='log_message' value=log.logMessage class="col s12" }}
+        {{!-- {{md-select label="Criticality"
+            class="col s12"
+            prompt="Select Criticality"
+            value=team.criticality
+            content=model.arrayCritical.content
+            optionLabelPath="content.value"
+            optionValuePath="content.level"
+            }}
+         --}}
+ 
+    
+
+        <button class="confirm-submit" {{action "createLogSubmit" log}}>Submit</button>
+    </form>
+</div>
+{{yield}}
